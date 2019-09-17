@@ -1,8 +1,8 @@
 import React from "react"
 
-export const Row = ({row, changeData,deleteRow}) => {
+export const Row = ({row, idInArray, changeData,deleteRow}) => {
     return (
-        <div className={`row mb-0 justify-content-center alert ${row.id%2===0? 'alert-primary':null}`}>
+        <li className={`row mb-0 justify-content-center alert ${idInArray%2===0? 'alert-primary':null}`}>
             {row.id?
             <div className="col-3 col-sm-3 col-md-1 mb-2 mb-md-0 text-center">
                     <select
@@ -30,7 +30,7 @@ export const Row = ({row, changeData,deleteRow}) => {
             <div className="col-6 col-sm-3 col-md-1 text-center">
                 <button className="btn btn-danger" onClick={()=>{deleteRow(row.id)}} >Delete</button>
             </div>
-        </div>
+        </li>
     )
 }
 

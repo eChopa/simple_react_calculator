@@ -7,7 +7,7 @@ export const Result = ({rows}) => {
     return (
         rows.length?
                 <div className="row justify-content-center alert alert-info font-weight-bold">
-                    Result {result}
+                    Result: {result}
                 </div>
             : null
     )

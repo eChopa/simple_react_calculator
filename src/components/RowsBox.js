@@ -9,6 +9,10 @@ export const RowsBox = ({rows, setRows}) => {
     const changeData = (type,value, id) => {
         setRows(rows.map(row => {return row.id === id? {...row, [type]: value} : row}))
     }
-    return (rows.map((row) => {return (<Row key={row.id} row={row} changeData={changeData} deleteRow={deleteRow}/>)})
+    return (
+        <ul className="list-group">
+            {rows.map((row,idInArray) => {return (<Row key={row.id} idInArray={idInArray} row={row} changeData={changeData} deleteRow={deleteRow}/>)})}
+        </ul>
+
     )
 }
