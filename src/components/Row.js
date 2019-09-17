@@ -3,7 +3,6 @@ import React from "react"
 export const Row = ({row, idInArray, changeData,deleteRow}) => {
     return (
         <li className={`row mb-0 justify-content-center alert ${idInArray%2===0? 'alert-primary':null}`}>
-            {row.id?
             <div className="col-3 col-sm-3 col-md-1 mb-2 mb-md-0 text-center">
                     <select
                         className="form-control"
@@ -14,9 +13,7 @@ export const Row = ({row, idInArray, changeData,deleteRow}) => {
                         <option value="-">-</option>
                     </select>
             </div>
-                : null
-            }
-            <div className={`col-9 col-sm-3 col-md-2 mb-2 mb-md-0 text-center ${!row.id? " offset-md-1":null}`}>
+            <div className="col-9 col-sm-3 col-md-2 mb-2 mb-md-0 text-center">
                 <input className="form-control text-center" value={row.value}
                        onChange={(event)=>{changeData("value",event.target.value,row.id)
                        }}
