@@ -1,26 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import { RowsBox } from "./components/RowsBox";
+import  {Result} from "./components/Result";
+import { AddRow } from "./components/AddRow";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css'
 
-function App() {
+export const Calculator = () => {
+  const [rows, setRows] = useState([])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <div className="container d-flex flex-column justify-content-center align-content-center">
+        <h1 className="text-center">Simple React calculator (adder)</h1>
+        <RowsBox rows={rows} setRows={setRows} />
+          <AddRow rows={rows} setRows={setRows} />
+        <Result rows={rows}/>
+      </div>
+  )
 }
-
-export default App;
